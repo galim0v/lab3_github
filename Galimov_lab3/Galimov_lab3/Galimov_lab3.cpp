@@ -7,10 +7,11 @@
 #include "KS.h"
 #include "Utils.h"
 #include "Maps.h"
+#include "Connections.h"
 
 using namespace std;
 
-//общее
+//общее для труб и КС
 void view_all(map<int, Truba>& maptr, map<int, KS>& mapks)
 {
     print_tr_all(maptr);
@@ -69,16 +70,14 @@ void save_all(map<int, Truba>& maptr, map<int, KS>& mapks)
 
 
 
-void vibor(Truba tr, KS ks, map<int, Truba>& maptr, map<int, KS>& mapks) //бесконечное меню
+void vibor(Truba tr, KS ks, map<int, Truba>& maptr, map<int, KS>& mapks, map<int, Connections>mapcon) //бесконечное меню
 {
     int s = 0, nt = 0, nk = 0;
     string ks_name;
     double pnc = 0.0;
     do {
         print_menu();
-
-        GetCorrectNumber(s, 0, 7);
-
+        GetCorrectNumber(s, 0, 8);
         switch (s)
         {
         case 1:
@@ -110,6 +109,9 @@ void vibor(Truba tr, KS ks, map<int, Truba>& maptr, map<int, KS>& mapks) //бе�
         case 7:
             load_all(maptr, mapks);
             break;
+        case 8:
+            menu_choose_connections(maptr,mapks,mapcon);
+            break;
         }
     } while (s != 0);
 }
@@ -117,18 +119,14 @@ void vibor(Truba tr, KS ks, map<int, Truba>& maptr, map<int, KS>& mapks) //бе�
 int main() //красиво и лаконично
 {
     setlocale(LC_ALL, "Russian");
-
     Truba tr;
     KS ks;
-
+    Connections con;
     map<int, Truba> maptr;
     map<int, KS> mapks;
-
+    map<int, Connections>mapcon;
+    
     set<int> settr;
     set<int>setks;
-
-    //maptr.insert(pair<int, Truba>(0, tr));
-    //mapks.insert(pair<int, KS>(0, ks));
-
-    vibor(tr, ks, maptr, mapks);
+    vibor(tr, ks, maptr, mapks,mapcon);
 }

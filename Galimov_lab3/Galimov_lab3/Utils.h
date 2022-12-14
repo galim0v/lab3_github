@@ -33,4 +33,6 @@ void print_menu_choose_ks2();
 void print_menu_edit_ks();
 
 
+void print_menu_connections();
+
 

@@ -8,6 +8,7 @@
 #include <fstream>
 #include <map>
 #include <set>
+#include "Connections.h"
 
 
 using namespace std;
@@ -59,4 +60,9 @@ void edit_delete_ks(map<int, KS>& mapks, set <int>& setks);
 void choose_ks_2(map<int, KS>& mapks, set <int>& setks);
 
 void choose_ks(map<int, KS>& mapks);
+
+
+
+
+void menu_choose_connections(map<int, Truba>& maptr, map<int, KS>& mapks, map<int, Connections>& mapcon);
 
