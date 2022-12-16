@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include <locale>
+#include "Connections.h"
 #include <fstream>
 #include <map>
 #include <set>

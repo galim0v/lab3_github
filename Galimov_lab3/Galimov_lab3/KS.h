@@ -3,6 +3,7 @@
 #include <string>
 #include <locale>
 #include <fstream>
+#include "Connections.h"
 #include <map>
 #include <set>
 

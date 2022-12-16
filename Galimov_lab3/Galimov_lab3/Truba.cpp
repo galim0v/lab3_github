@@ -1,4 +1,5 @@
 #include "Truba.h"
+#include "Connections.h"
 #include "Utils.h"
 #include <iostream>
 #include <string>

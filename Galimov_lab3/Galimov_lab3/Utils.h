@@ -1,5 +1,7 @@
 #pragma once
 #include <iostream>
+#include <map>
+#include "Connections.h"
 using namespace std;
 
 template <typename T>

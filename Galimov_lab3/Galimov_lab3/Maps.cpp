@@ -532,22 +532,25 @@ void choose_ks(map<int, KS>& mapks)
 
 
 
-void menu_choose_connections(map<int, Truba>& maptr, map<int, KS>& mapks, map<int, Connections>& mapcon)
-{
-    /*int s;
-    do {
-        print_menu_connections();
-
-        GetCorrectNumber(s, 0, 2);
-
-        switch (s)
-        {
-        case 1:
-            add_connection(maptr, mapks, mapcon);
-            break;
-        case 2:
-            view_connections(mapcon);
-            break;
-        }
-    } while (s != 0);*/
-}
+//void menu_choose_connections(map<int, Truba>& maptr, map<int, KS>& mapks, map<int, Connections>& mapcon)
+//{
+//    cout << "!";
+//    //int s;
+//    //do {
+//    //    print_menu_connections();
+//
+//    //    GetCorrectNumber(s, 0, 2);
+//
+//    //    switch (s)
+//    //    {
+//    //    case 1:
+//    //        //add_connection(maptr, mapks, mapcon);
+//    //        cout << endl;
+//    //        break;
+//    //    case 2:
+//    //       // view_connections(mapcon);
+//    //        cout << endl;
+//    //        break;
+//    //    }
+//    //} while (s != 0);
+//}

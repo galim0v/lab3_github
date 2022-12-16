@@ -1,13 +1,16 @@
-﻿#include <iostream>
+﻿#pragma once
+#include <iostream>
+#include "Connections.h"
 #include <string>
 #include <locale>
 #include <fstream>
 #include <set>
+#include <map>
 #include "Truba.h"
 #include "KS.h"
 #include "Utils.h"
 #include "Maps.h"
-#include "Connections.h"
+
 
 using namespace std;
 
@@ -70,11 +73,9 @@ void save_all(map<int, Truba>& maptr, map<int, KS>& mapks)
 
 
 
-void vibor(Truba tr, KS ks, map<int, Truba>& maptr, map<int, KS>& mapks, map<int, Connections>mapcon) //бесконечное меню
+void vibor(Truba tr, KS ks, map<int, Truba>& maptr, map<int, KS>& mapks, map<int, Connections>& mapcon) //бесконечное меню
 {
-    int s = 0, nt = 0, nk = 0;
-    string ks_name;
-    double pnc = 0.0;
+    int s = 0;
     do {
         print_menu();
         GetCorrectNumber(s, 0, 8);
@@ -110,7 +111,8 @@ void vibor(Truba tr, KS ks, map<int, Truba>& maptr, map<int, KS>& mapks, map<int
             load_all(maptr, mapks);
             break;
         case 8:
-            menu_choose_connections(maptr,mapks,mapcon);
+            //menu_choose_connections(maptr,mapks,mapcon);
+            print_menu_connections();
             break;
         }
     } while (s != 0);
@@ -122,11 +124,18 @@ int main() //красиво и лаконично
     Truba tr;
     KS ks;
     Connections con;
+
     map<int, Truba> maptr;
     map<int, KS> mapks;
-    map<int, Connections>mapcon;
+    map<int, Connections> mapcon;
     
     set<int> settr;
     set<int>setks;
+
+   /* con.ks_end_id = 1;
+    con.ks_start_id = 1;
+    con.tr_id = 1;
+    mapcon.insert(pair<int, Connections>(0, con));*/
+
     vibor(tr, ks, maptr, mapks,mapcon);
 }
